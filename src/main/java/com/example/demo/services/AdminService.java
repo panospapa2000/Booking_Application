@@ -1,7 +1,6 @@
 package com.example.demo.services;
 
 import com.example.demo.models.Admin;
-import com.example.demo.models.Employee;
 import com.example.demo.repositories.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,4 +28,7 @@ public class AdminService {
         return adminRepository.saveAll(admins);
     }
 
+    public void deleteAllAdmins(){
+        adminRepository.deleteAll();
+    }
 }

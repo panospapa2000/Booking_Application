@@ -8,11 +8,12 @@ import java.util.List;
 @Table(name = "room")
 public class Room {
 
-    @OneToMany(mappedBy = "room")
-    private List<Booking> bookings;
-
     private Integer id;
     private String name;
+
+    @OneToMany(targetEntity = Booking.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "room_id", referencedColumnName = "id")
+    private List<Booking> bookings;
 
     public Room(Integer id, String name) {
         this.id = id;
