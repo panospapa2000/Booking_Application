@@ -1,7 +1,7 @@
-package com.example.demo.repositories;
+package com.onelity.bookme.repositories;
+import com.onelity.bookme.model.room;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.example.demo.model.room;
 
 @Repository
 public interface RoomRepository extends JpaRepository<room, Integer> {

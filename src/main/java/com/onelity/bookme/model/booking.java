@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.onelity.bookme.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;

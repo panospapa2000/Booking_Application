@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.onelity.bookme.model;
 import java.util.List;
 import javax.persistence.*;
 

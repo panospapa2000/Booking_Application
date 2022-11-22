@@ -1,7 +1,7 @@
-package com.example.demo.repositories;
+package com.onelity.bookme.repositories;
+import com.onelity.bookme.model.booking;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.example.demo.model.booking;
 
 @Repository
 public interface BookingRepository extends JpaRepository<booking, Integer> {

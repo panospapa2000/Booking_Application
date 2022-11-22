@@ -1,4 +1,4 @@
-package com.example.demo.DTO;
+package com.onelity.bookme.DTO;
 
 public class AdminDTO {
     private String username;

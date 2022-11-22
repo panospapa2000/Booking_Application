@@ -1,6 +1,6 @@
-package com.example.demo.services;
-import com.example.demo.model.admin;
-import com.example.demo.repositories.AdminRepository;
+package com.onelity.bookme.services;
+import com.onelity.bookme.model.admin;
+import com.onelity.bookme.repositories.AdminRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

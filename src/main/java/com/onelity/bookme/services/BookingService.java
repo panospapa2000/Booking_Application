@@ -1,7 +1,6 @@
-package com.example.demo.services;
-import com.example.demo.model.booking;
-import com.example.demo.repositories.BookingRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+package com.onelity.bookme.services;
+import com.onelity.bookme.model.booking;
+import com.onelity.bookme.repositories.BookingRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

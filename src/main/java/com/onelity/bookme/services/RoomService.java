@@ -1,8 +1,7 @@
-package com.example.demo.services;
+package com.onelity.bookme.services;
 
-import com.example.demo.model.room;
-import com.example.demo.repositories.RoomRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.onelity.bookme.model.room;
+import com.onelity.bookme.repositories.RoomRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
