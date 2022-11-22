@@ -1,9 +1,7 @@
-package com.example.demo.controllers;
+package com.onelity.bookme.controllers;
 
-import com.example.demo.model.employee;
-import com.example.demo.services.BookingService;
-import com.example.demo.services.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.onelity.bookme.model.employee;
+import com.onelity.bookme.services.EmployeeService;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -12,7 +10,7 @@ import java.util.List;
 public class EmployeeController {
 
     private final EmployeeService employeeService;
-    @Autowired
+
     public EmployeeController(EmployeeService employeeService) { this.employeeService = employeeService; }
 
     public List<employee> getEmployees() {

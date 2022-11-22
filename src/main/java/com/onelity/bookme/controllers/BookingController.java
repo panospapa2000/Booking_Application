@@ -1,8 +1,7 @@
-package com.example.demo.controllers;
+package com.onelity.bookme.controllers;
 
-import com.example.demo.model.booking;
-import com.example.demo.services.BookingService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.onelity.bookme.model.booking;
+import com.onelity.bookme.services.BookingService;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.List;
 @RestController
 public class BookingController {
     private final BookingService bookingService;
-    @Autowired
+
     public BookingController(BookingService bookingService1) { this.bookingService = bookingService1; }
 
     public List<booking> getBookings() {

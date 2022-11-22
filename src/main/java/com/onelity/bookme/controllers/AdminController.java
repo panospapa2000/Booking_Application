@@ -1,8 +1,7 @@
-package com.example.demo.controllers;
+package com.onelity.bookme.controllers;
 
-import com.example.demo.model.admin;
-import com.example.demo.services.AdminService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.onelity.bookme.model.admin;
+import com.onelity.bookme.services.AdminService;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -11,7 +10,6 @@ import java.util.List;
 public class AdminController {
     private final AdminService adminService;
 
-    @Autowired
     public AdminController(AdminService adminService) {
         this.adminService = adminService;
     }

@@ -1,9 +1,7 @@
-package com.example.demo.controllers;
+package com.onelity.bookme.controllers;
 
-import com.example.demo.model.room;
-import com.example.demo.services.EmployeeService;
-import com.example.demo.services.RoomService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.onelity.bookme.model.room;
+import com.onelity.bookme.services.RoomService;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -11,7 +9,7 @@ import java.util.List;
 @RestController
 public class RoomController {
     private final RoomService roomService;
-    @Autowired
+
     public RoomController(RoomService roomService) { this.roomService = roomService; }
 
     public List<room> getRooms() {
