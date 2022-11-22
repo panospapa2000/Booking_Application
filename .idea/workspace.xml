@@ -4,15 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05a3c74f-d312-4def-b4e5-0cd2aa0ab68f" name="Changes" comment="DTOs need to be managed. Some basic unit testing for Admin Service was done.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/integration/EmployeeServiceTest.java" afterDir="false" />
+    <list default="true" id="05a3c74f-d312-4def-b4e5-0cd2aa0ab68f" name="Changes" comment="blah">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/dto/BookingDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/dto/BookingDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/dto/EmployeeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/dto/EmployeeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/dto/RoomDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/dto/RoomDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/dto/BookingDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/dto/EmployeeDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/dto/RoomDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Booking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/AdminRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/BookingRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/EmployeeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/RoomRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/AdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/BookingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/EmployeeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/RoomService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/integration/AdminServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/integration/EmployeeServiceTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +72,9 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.AdminServiceTest.testDeleteAllAdmins">
-    <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.DemoApplication" />
+  <component name="RunManager" selected="Application.BookMeApplication">
+    <configuration name="BookMeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.BookMeApplication" />
       <module name="bookme" />
       <extension name="coverage">
         <pattern>
@@ -75,7 +86,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdminServiceTest.adminCRUD_negative_userNameNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AdminServiceTest.adminCRUD_positive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bookme" />
       <extension name="coverage">
         <pattern>
@@ -85,7 +96,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.demo.integration" />
       <option name="MAIN_CLASS_NAME" value="com.example.demo.integration.AdminServiceTest" />
-      <option name="METHOD_NAME" value="adminCRUD_negative_userNameNull" />
+      <option name="METHOD_NAME" value="adminCRUD_positive" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminServiceTest.adminCRUD_positive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bookme" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.onelity.bookme.integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.onelity.demo.integration" />
+      <option name="MAIN_CLASS_NAME" value="com.onelity.bookme.integration.AdminServiceTest" />
+      <option name="METHOD_NAME" value="adminCRUD_positive" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,29 +150,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeServiceTest.employee_negative_firstNameNULL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bookme" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.integration.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.integration" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.integration.EmployeeServiceTest" />
-      <option name="METHOD_NAME" value="employee_negative_firstNameNULL" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AdminServiceTest.testDeleteAllAdmins" />
-        <item itemvalue="Application.DemoApplication" />
-        <item itemvalue="JUnit.EmployeeServiceTest.employee_negative_firstNameNULL" />
+        <item itemvalue="JUnit.AdminServiceTest.adminCRUD_positive" />
         <item itemvalue="JUnit.EmployeeServiceTest.employeeCRUD_positive" />
-        <item itemvalue="JUnit.AdminServiceTest.adminCRUD_negative_userNameNull" />
+        <item itemvalue="Application.BookMeApplication" />
+        <item itemvalue="JUnit.AdminServiceTest.testDeleteAllAdmins" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +182,28 @@
       <option name="project" value="LOCAL" />
       <updated>1668783959131</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="DTOs completed. +Basic unit testing for Employee Service.">
+      <created>1669103997889</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669103997889</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Replaced constructors/getters/setters in Models+DTOs with usage of lombok.">
+      <created>1669123660167</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669123660168</updated>
+    </task>
+    <task id="LOCAL-00005" summary="blah">
+      <created>1669125270811</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669125270811</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,21 +232,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Models, Repositories and Services for each item. Connection with mariadb is successful." />
     <MESSAGE value="DTOs need to be managed. Some basic unit testing for Admin Service was done." />
-    <option name="LAST_COMMIT_MESSAGE" value="DTOs need to be managed. Some basic unit testing for Admin Service was done." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/example/demo/integration/EmployeeServiceTest.java</url>
-          <line>24</line>
-          <properties class="com.example.demo.integration.EmployeeServiceTest" method="employeeCRUD_positive">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="DTOs completed. +Basic unit testing for Employee Service." />
+    <MESSAGE value="Replaced constructors/getters/setters in Models+DTOs with usage of lombok." />
+    <MESSAGE value="blah" />
+    <option name="LAST_COMMIT_MESSAGE" value="blah" />
   </component>
 </project>
