@@ -1,4 +1,4 @@
-package com.onelity.bookme.DTO;
+package com.onelity.bookme.dto;
 
 import com.onelity.bookme.model.room;
 
