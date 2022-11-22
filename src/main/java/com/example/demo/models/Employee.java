@@ -17,6 +17,9 @@ public class Employee{
         this.email = email;
     }
 
+    public Employee() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getId() {

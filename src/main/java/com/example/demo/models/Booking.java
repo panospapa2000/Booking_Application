@@ -19,9 +19,8 @@ public class Booking {
     private Room room;
 
 
-    public Booking(Integer id, String title, String description,
+    public Booking(String title, String description,
                    Timestamp start, Timestamp end, String participants, Room room) {
-        this.id = id;
         this.title = title;
         this.description = description;
         this.start = start;

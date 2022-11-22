@@ -1,10 +1,10 @@
 package com.example.demo.dto;
 
 public class RoomDTO {
-    private int id;
+    private Integer id;
     private String name;
 
-    public RoomDTO(int id, String name) {
+    public RoomDTO(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -13,7 +13,7 @@ public class RoomDTO {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

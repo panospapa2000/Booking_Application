@@ -1,7 +1,6 @@
 package com.example.demo.dto;
 
 public class EmployeeDTO {
-    private int id;
     private String firstName;
     private String lastName;
     private String email;
