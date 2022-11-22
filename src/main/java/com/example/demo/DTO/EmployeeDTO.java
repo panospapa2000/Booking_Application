@@ -1,18 +1,37 @@
 package com.example.demo.DTO;
 
-import javax.persistence.Column;
-
 public class EmployeeDTO {
-
-    @Column(name = "id")
-    private Integer id;
-
-    @Column(name = "email")
+    private String firstName;
+    private String lastName;
     private String email;
 
-    @Column(name = "firstname")
-    private String firstname;
+    public EmployeeDTO(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
 
-    @Column(name = "surname")
-    private String surname;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

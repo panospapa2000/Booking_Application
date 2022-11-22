@@ -1,14 +1,27 @@
 package com.example.demo.DTO;
-import javax.persistence.Column;
 
 public class AdminDTO {
-    @Column(name = "id")
-    private Integer id;
-
-    @Column(name = "username")
     private String username;
-
-    @Column(name = "password")
     private String password;
 
+    public AdminDTO(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
