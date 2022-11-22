@@ -17,10 +17,10 @@ public class RoomController {
     public List<room> getRooms() {
         return roomService.getRooms();
     }
-    public room getRoomById(int id) {
+    public room getRoomById(Integer id) {
         return roomService.getRoomById(id);
     }
-    public String deleteRoom(int id) {
+    public String deleteRoom(Integer id) {
         return roomService.deleteRoom(id);
     }
     public room saveRoom(room room) {
@@ -31,5 +31,7 @@ public class RoomController {
         return roomService.saveAllRooms(rooms);
     }
 
-
+    public String deleteAllRooms() {
+        return roomService.deleteAllRooms();
+    }
 }

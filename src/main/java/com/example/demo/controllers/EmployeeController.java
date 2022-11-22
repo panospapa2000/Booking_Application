@@ -18,7 +18,7 @@ public class EmployeeController {
     public List<employee> getEmployees() {
         return employeeService.getEmployees();
     }
-    public employee getEmployeeById(int id) {
+    public employee getEmployeeById(Integer id) {
         return employeeService.getEmployeeById(id);
     }
     public employee saveEmployee(employee employee) {
@@ -27,6 +27,12 @@ public class EmployeeController {
     public List<employee> saveAllEmployees(List<employee> employees) {
         return employeeService.saveAllEmployees(employees);
     }
+    public String deleteEmployee(Integer id) {
+        return employeeService.deleteEmployee(id);
+    }
 
+    public String deleteAllEmployees() {
+        return employeeService.deleteAllEmployees();
+    }
 
 }

@@ -16,13 +16,13 @@ public class RoomService {
         return roomRepository.findAll();
     }
 
-    public room getRoomById(int id){
+    public room getRoomById(Integer id){
         return roomRepository.findById(id).orElse(null);
     }
 
-    public String deleteRoom(int id){
+    public String deleteRoom(Integer id){
         roomRepository.deleteById(id);
-        return "room removed!" + id;
+        return "room " + id + " has been removed!";
     }
 
     public room saveRoom(room room){
@@ -32,4 +32,11 @@ public class RoomService {
     public List<room> saveAllRooms(List<room> rooms){
         return roomRepository.saveAll(rooms);
     }
+
+    public String deleteAllRooms() {
+        roomRepository.deleteAll();
+        return "All rooms have been deleted!";
+    }
 }
+
+

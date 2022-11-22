@@ -27,4 +27,14 @@ public class EmployeeService {
     public List<employee> saveAllEmployees(List<employee> employees){
         return employeeRepository.saveAll(employees);
     }
+
+    public String deleteEmployee(Integer id){
+        employeeRepository.deleteById(id);
+        return "employee " + id + " has been removed!";
+    }
+
+    public String deleteAllEmployees(){
+        employeeRepository.deleteAll();
+        return "All employees have been deleted!";
+    }
 }

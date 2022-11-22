@@ -16,10 +16,10 @@ public class BookingController {
     public List<booking> getBookings() {
         return bookingService.getBookings();
     }
-    public booking getBookingById(int id) {
+    public booking getBookingById(Integer id) {
         return bookingService.getBookingById(id);
     }
-    public String deleteBooking(int id) {
+    public String deleteBooking(Integer id) {
         return bookingService.deleteBooking(id);
     }
 }

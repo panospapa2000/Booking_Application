@@ -1,7 +1,6 @@
 package com.example.demo.services;
 import com.example.demo.model.admin;
 import com.example.demo.repositories.AdminRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,9 +14,11 @@ public class AdminService {
         return adminRepository.findAll();
     }
 
-    public admin getAdminById(int id){
+    public admin getAdminById(Integer id){
         return adminRepository.findById(id).orElse(null);
     }
+
+    public String deleteAdminWithID(Integer id) { adminRepository.deleteById(id); return "Admin " + id + " has been removed!";}
 
     public admin saveAdmin(admin admin){
         return adminRepository.save(admin);
@@ -25,6 +26,11 @@ public class AdminService {
 
     public List<admin> saveAllAdmins(List<admin> admins){
         return adminRepository.saveAll(admins);
+    }
+
+    public String deleteAllAdmins() {
+        adminRepository.deleteAll();
+        return "All Admins have been removed!";
     }
 
 }

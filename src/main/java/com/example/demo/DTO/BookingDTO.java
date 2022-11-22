@@ -9,19 +9,19 @@ public class BookingDTO {
     private Integer id;
     private String title;
     private String description;
-    private Timestamp start;
-    private Timestamp end;
+    private Timestamp start_timestamp;
+    private Timestamp end_timestamp;
     private String participants;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     private room room;
 
     public BookingDTO(String title, String description,
-                      Timestamp start, Timestamp end, String participants, room room) {
+                      Timestamp start_timestamp, Timestamp end_timestamp, String participants, room room) {
         this.title = title;
         this.description = description;
-        this.start = start;
-        this.end = end;
+        this.start_timestamp = start_timestamp;
+        this.end_timestamp = end_timestamp;
         this.participants = participants;
         this.room = room;
     }
@@ -30,7 +30,7 @@ public class BookingDTO {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -51,19 +51,19 @@ public class BookingDTO {
     }
 
     public Timestamp getStart() {
-        return start;
+        return start_timestamp;
     }
 
-    public void setStart(Timestamp start) {
-        this.start = start;
+    public void setStart(Timestamp start_timestamp) {
+        this.start_timestamp = start_timestamp;
     }
 
     public Timestamp getEnd() {
-        return end;
+        return end_timestamp;
     }
 
-    public void setEnd(Timestamp end) {
-        this.end = end;
+    public void setEnd(Timestamp end_timestamp) {
+        this.end_timestamp = end_timestamp;
     }
 
     public String getParticipants() {

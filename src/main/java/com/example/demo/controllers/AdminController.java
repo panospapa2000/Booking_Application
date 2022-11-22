@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 public class AdminController {
     private final AdminService adminService;
+
     @Autowired
     public AdminController(AdminService adminService) {
         this.adminService = adminService;
@@ -18,9 +19,11 @@ public class AdminController {
     public List<admin> getAdmins() {
         return adminService.getAdmins();
     }
-    public admin getAdminById(int id) {
+
+    public admin getAdminById(Integer id) {
         return adminService.getAdminById(id);
     }
+
     public admin saveAdmin(admin admin) {
         return adminService.saveAdmin(admin);
     }
@@ -28,4 +31,15 @@ public class AdminController {
     public List<admin> saveAllAdmins(List<admin> admins) {
         return adminService.saveAllAdmins(admins);
     }
+
+    public String deleteAllAdmins() {
+       return adminService.deleteAllAdmins();
+    }
+
+    public String deleteAdminWithID(Integer id) {
+       return adminService.deleteAdminWithID(id);
+
+    }
 }
+
+
