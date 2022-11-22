@@ -1,10 +1,10 @@
-package com.onelity.bookme;
+package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BookmeApplicationTests {
+class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {

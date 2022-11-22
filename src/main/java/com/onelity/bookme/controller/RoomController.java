@@ -1,7 +1,7 @@
-package com.onelity.bookme.controllers;
+package com.onelity.bookme.controller;
 
-import com.onelity.bookme.model.room;
-import com.onelity.bookme.services.RoomService;
+import com.onelity.bookme.model.Room;
+import com.onelity.bookme.service.RoomService;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -12,24 +12,21 @@ public class RoomController {
 
     public RoomController(RoomService roomService) { this.roomService = roomService; }
 
-    public List<room> getRooms() {
+    public List<Room> getRooms() {
         return roomService.getRooms();
     }
-    public room getRoomById(Integer id) {
+    public Room getRoomById(Integer id) {
         return roomService.getRoomById(id);
     }
     public String deleteRoom(Integer id) {
         return roomService.deleteRoom(id);
     }
-    public room saveRoom(room room) {
+    public Room saveRoom(Room room) {
         return roomService.saveRoom(room);
     }
 
-    public List<room> saveAllRooms(List<room> rooms) {
+    public List<Room> saveAllRooms(List<Room> rooms) {
         return roomService.saveAllRooms(rooms);
     }
 
-    public String deleteAllRooms() {
-        return roomService.deleteAllRooms();
-    }
 }

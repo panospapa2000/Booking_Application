@@ -1,7 +1,7 @@
-package com.onelity.bookme.controllers;
+package com.onelity.bookme.controller;
 
-import com.onelity.bookme.model.admin;
-import com.onelity.bookme.services.AdminService;
+import com.onelity.bookme.model.Admin;
+import com.onelity.bookme.service.AdminService;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -14,29 +14,24 @@ public class AdminController {
         this.adminService = adminService;
     }
 
-    public List<admin> getAdmins() {
+    public List<Admin> getAdmins() {
         return adminService.getAdmins();
     }
 
-    public admin getAdminById(Integer id) {
+    public Admin getAdminById(Integer id) {
         return adminService.getAdminById(id);
     }
 
-    public admin saveAdmin(admin admin) {
+    public Admin saveAdmin(Admin admin) {
         return adminService.saveAdmin(admin);
     }
 
-    public List<admin> saveAllAdmins(List<admin> admins) {
+    public List<Admin> saveAllAdmins(List<Admin> admins) {
         return adminService.saveAllAdmins(admins);
     }
 
-    public String deleteAllAdmins() {
-       return adminService.deleteAllAdmins();
-    }
-
-    public String deleteAdminWithID(Integer id) {
-       return adminService.deleteAdminWithID(id);
-
+    public void deleteAdminWithID(Integer id) {
+       adminService.deleteAdminWithID(id);
     }
 }
 

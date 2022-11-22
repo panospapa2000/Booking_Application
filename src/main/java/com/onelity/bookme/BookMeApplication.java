@@ -2,6 +2,7 @@ package com.onelity.bookme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
 public class BookmeApplication {
 

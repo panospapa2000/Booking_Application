@@ -1,27 +1,28 @@
-package com.onelity.bookme.services;
-import com.onelity.bookme.model.booking;
-import com.onelity.bookme.repositories.BookingRepository;
+package com.onelity.bookme.service;
+
+import com.onelity.bookme.model.Booking;
+import com.onelity.bookme.repository.BookingRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class BookingService {
-
+    @Autowired
     private BookingRepository bookingRepository;
 
-
-    public List<booking> getBookings(){
+    public List<Booking> getBookings(){
         return bookingRepository.findAll();
     }
 
-    public booking getBookingById(int id){
+    public Booking getBookingById(int id){
         return  bookingRepository.findById(id).orElse(null);
     }
 
     public String deleteBooking(int id){
         bookingRepository.deleteById(id);
-        return "removed booking " + id;
+        return "booking removed!" + id;
     }
 
 }
