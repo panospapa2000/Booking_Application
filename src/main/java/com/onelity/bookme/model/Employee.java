@@ -1,4 +1,4 @@
-package com.onelity.bookme.models;
+package com.onelity.bookme.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,5 +27,4 @@ public class Employee{
 
     @Column(name = "email", nullable = false)
     private String email;
-    //ssdsaw
 }

@@ -1,7 +1,7 @@
-package com.onelity.bookme.services;
+package com.onelity.bookme.service;
 
-import com.onelity.bookme.models.Booking;
-import com.onelity.bookme.repositories.BookingRepository;
+import com.onelity.bookme.model.Booking;
+import com.onelity.bookme.repository.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

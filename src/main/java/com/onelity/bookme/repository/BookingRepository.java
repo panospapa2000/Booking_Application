@@ -1,6 +1,6 @@
-package com.onelity.bookme.repositories;
+package com.onelity.bookme.repository;
 
-import com.onelity.bookme.models.Booking;
+import com.onelity.bookme.model.Booking;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

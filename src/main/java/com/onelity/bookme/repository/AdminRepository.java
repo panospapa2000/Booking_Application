@@ -1,9 +1,9 @@
-package com.onelity.bookme.repositories;
+package com.onelity.bookme.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.onelity.bookme.models.Admin;
+import com.onelity.bookme.model.Admin;
 
 @Repository
 public interface AdminRepository extends JpaRepository<Admin, Integer> {

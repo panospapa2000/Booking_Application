@@ -1,7 +1,7 @@
-package com.onelity.bookme.services;
+package com.onelity.bookme.service;
 
-import com.onelity.bookme.models.Admin;
-import com.onelity.bookme.repositories.AdminRepository;
+import com.onelity.bookme.model.Admin;
+import com.onelity.bookme.repository.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

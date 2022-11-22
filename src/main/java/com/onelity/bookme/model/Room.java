@@ -1,4 +1,4 @@
-package com.onelity.bookme.models;
+package com.onelity.bookme.model;
 
 
 import lombok.AllArgsConstructor;
@@ -26,5 +26,4 @@ public class Room {
     @OneToMany(targetEntity = Booking.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "room_id", referencedColumnName = "id")
     private List<Booking> bookings;
-    //sdasdad
 }

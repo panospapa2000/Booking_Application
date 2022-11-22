@@ -1,6 +1,6 @@
 package com.onelity.bookme.dto;
 
-import com.onelity.bookme.models.Room;
+import com.onelity.bookme.model.Room;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,5 +23,4 @@ public class BookingDTO {
     private String participants;
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     private Room room;
-    //sdsa
 }

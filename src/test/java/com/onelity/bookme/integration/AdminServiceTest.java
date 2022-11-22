@@ -1,7 +1,7 @@
 package com.onelity.bookme.integration;
 
-import com.onelity.bookme.models.Admin;
-import com.onelity.bookme.services.AdminService;
+import com.onelity.bookme.model.Admin;
+import com.onelity.bookme.service.AdminService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

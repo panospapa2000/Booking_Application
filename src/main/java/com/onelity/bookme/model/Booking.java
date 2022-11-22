@@ -1,4 +1,4 @@
-package com.onelity.bookme.models;
+package com.onelity.bookme.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -38,5 +38,4 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name="room_id")
     private Room room;
-    //sda
 }

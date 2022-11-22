@@ -1,4 +1,4 @@
-package com.onelity.bookme.models;
+package com.onelity.bookme.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,5 +23,4 @@ public class Admin {
     @Column(name = "password", nullable = false)
     private String password;
 
-    //sdawds
 }
