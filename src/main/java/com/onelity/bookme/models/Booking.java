@@ -38,4 +38,5 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name="room_id")
     private Room room;
+    //sda
 }

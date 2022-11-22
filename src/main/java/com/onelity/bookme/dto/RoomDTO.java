@@ -12,4 +12,5 @@ import lombok.Setter;
 public class RoomDTO {
     private Integer id;
     private String name;
+    //sdsa
 }

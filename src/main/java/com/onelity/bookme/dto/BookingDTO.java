@@ -23,4 +23,5 @@ public class BookingDTO {
     private String participants;
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     private Room room;
+    //sdsa
 }
