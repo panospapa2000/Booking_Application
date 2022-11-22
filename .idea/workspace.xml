@@ -1,37 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="05a3c74f-d312-4def-b4e5-0cd2aa0ab68f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/dto/AdminDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/dto/AdminDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/dto/BookingDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/dto/BookingDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/dto/EmployeeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/dto/EmployeeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/dto/RoomDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/dto/RoomDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/models/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/models/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/models/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/models/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/onelity/bookme/models/Room.java" afterDir="false" />
+    <list default="true" id="88b413a4-8b11-4375-9c78-b9a20f70fd53" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Panagiotis" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,45 +20,19 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2Ha6LSHcSeoPjS2rgyzcqfrWk4s" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2HuGbSPTwBJpQKBVKbWV6tnle9D" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/onelity-ppapaioannou/IdeaProjects/bookme",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.com.onelity.bookme.BookMeApplication">
+}</component>
+  <component name="RunManager">
     <configuration name="BookMeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.BookMeApplication" />
-      <module name="bookme" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.onelity.bookme.BookMeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.onelity.bookme.BookMeApplication" />
       <module name="bookme" />
       <extension name="coverage">
@@ -90,132 +45,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdminServiceTest.adminCRUD_positive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bookme" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.integration.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.integration" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.integration.AdminServiceTest" />
-      <option name="METHOD_NAME" value="adminCRUD_positive" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AdminServiceTest.adminCRUD_positive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bookme" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.onelity.bookme.integration.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.onelity.demo.integration" />
-      <option name="MAIN_CLASS_NAME" value="com.onelity.bookme.integration.AdminServiceTest" />
-      <option name="METHOD_NAME" value="adminCRUD_positive" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AdminServiceTest.testDeleteAllAdmins" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bookme" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.integration.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.integration" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.integration.AdminServiceTest" />
-      <option name="METHOD_NAME" value="testDeleteAllAdmins" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmployeeServiceTest.employeeCRUD_positive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bookme" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.integration.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.integration" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.integration.EmployeeServiceTest" />
-      <option name="METHOD_NAME" value="employeeCRUD_positive" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.onelity.bookme.BookMeApplication" />
         <item itemvalue="Application.BookMeApplication" />
-        <item itemvalue="JUnit.AdminServiceTest.adminCRUD_positive" />
-        <item itemvalue="JUnit.EmployeeServiceTest.employeeCRUD_positive" />
-        <item itemvalue="JUnit.AdminServiceTest.testDeleteAllAdmins" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="05a3c74f-d312-4def-b4e5-0cd2aa0ab68f" name="Changes" comment="" />
-      <created>1668510791468</created>
+      <changelist id="88b413a4-8b11-4375-9c78-b9a20f70fd53" name="Changes" comment="" />
+      <created>1669127627006</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1668510791468</updated>
+      <updated>1669127627006</updated>
     </task>
-    <task id="LOCAL-00001" summary="Added Models, Repositories and Services for each item. Connection with mariadb is successful.">
-      <created>1668606617899</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1668606617899</updated>
-    </task>
-    <task id="LOCAL-00002" summary="DTOs need to be managed. Some basic unit testing for Admin Service was done.">
-      <created>1668783959131</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1668783959131</updated>
-    </task>
-    <task id="LOCAL-00003" summary="DTOs completed. +Basic unit testing for Employee Service.">
-      <created>1669103997889</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1669103997889</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Replaced constructors/getters/setters in Models+DTOs with usage of lombok.">
-      <created>1669123660167</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1669123660168</updated>
-    </task>
-    <task id="LOCAL-00005" summary="blah">
-      <created>1669125270811</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1669125270811</updated>
-    </task>
-    <task id="LOCAL-00006" summary="m">
-      <created>1669125627097</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1669125627097</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,31 +67,10 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/Panagiotis" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Models, Repositories and Services for each item. Connection with mariadb is successful." />
-    <MESSAGE value="DTOs need to be managed. Some basic unit testing for Admin Service was done." />
-    <MESSAGE value="DTOs completed. +Basic unit testing for Employee Service." />
-    <MESSAGE value="Replaced constructors/getters/setters in Models+DTOs with usage of lombok." />
-    <MESSAGE value="blah" />
-    <MESSAGE value="m" />
-    <option name="LAST_COMMIT_MESSAGE" value="m" />
   </component>
 </project>
