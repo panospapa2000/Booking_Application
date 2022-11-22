@@ -1,12 +1,12 @@
-package com.example.demo;
+package com.onelity.bookme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class BookmeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(BookmeApplication.class, args);
 	}
 
 }
