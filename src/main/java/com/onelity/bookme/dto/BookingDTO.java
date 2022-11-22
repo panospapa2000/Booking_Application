@@ -1,24 +1,24 @@
-package com.onelity.bookme.DTO;
+package com.onelity.bookme.dto;
 
-import com.onelity.bookme.model.room;
 
-import javax.persistence.FetchType;
+import com.onelity.bookme.model.Room;
+
 import javax.persistence.ManyToOne;
 import java.sql.Timestamp;
 
-public class BookingDTO {
-    private Integer id;
-    private String title;
-    private String description;
-    private Timestamp start_timestamp;
-    private Timestamp end_timestamp;
-    private String participants;
+    public class BookingDTO {
+        private Integer id;
+        private String title;
+        private String description;
+        private Timestamp start_timestamp;
+        private Timestamp end_timestamp;
+        private String participants;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    private com.onelity.bookme.model.room room;
+        @ManyToOne(optional = false)
+        Room room;
 
     public BookingDTO(String title, String description,
-                      Timestamp start_timestamp, Timestamp end_timestamp, String participants, room room) {
+                      Timestamp start_timestamp, Timestamp end_timestamp, String participants, Room room) {
         this.title = title;
         this.description = description;
         this.start_timestamp = start_timestamp;
@@ -75,11 +75,11 @@ public class BookingDTO {
         this.participants = participants;
     }
 
-    public room getRoom() {
+    public Room getRoom() {
         return room;
     }
 
-    public void setRoom(room room) {
+    public void setRoom(Room room) {
         this.room = room;
     }
 }
