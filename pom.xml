@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.onelity</groupId>
 	<artifactId>bookme</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.9</version>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>19</java.version>
