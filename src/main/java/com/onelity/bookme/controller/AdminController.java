@@ -34,6 +34,10 @@ public class AdminController {
     public void deleteAdminWithID(Integer id) {
        adminService.deleteAdminWithID(id);
     }
+
+    public void deleteAllAdmins() { adminService.deleteAllAdmins();}
+
+
 }
 
 
