@@ -9,11 +9,11 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "booking")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@Table(name = "booking")
 public class Booking {
 
     @Id
@@ -35,7 +35,7 @@ public class Booking {
     @Column(name = "participants", nullable = false)
     private String participants;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name="room_id")
     private Room room;
 }
