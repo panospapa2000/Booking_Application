@@ -1,8 +1,9 @@
 package com.onelity.bookme.controller;
 
+import com.onelity.bookme.dto.AdminDTO;
 import com.onelity.bookme.model.Admin;
 import com.onelity.bookme.service.AdminService;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,6 +16,7 @@ public class AdminController {
         this.adminService = adminService;
     }
 
+    @GetMapping("/admins")
     public List<Admin> getAdmins() {
         return adminService.getAdmins();
     }
@@ -23,7 +25,9 @@ public class AdminController {
         return adminService.getAdminById(id);
     }
 
-    public Admin saveAdmin(Admin admin) {
+    @PostMapping("/admins")
+    public Admin saveAdmin(@RequestBody AdminDTO adminDto, @RequestParam String custom_key) {
+        Admin admin = adminDto.convertToEntity();
         return adminService.saveAdmin(admin);
     }
 

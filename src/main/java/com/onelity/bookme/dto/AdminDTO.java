@@ -14,11 +14,11 @@ public class AdminDTO {
     private String password;
     ModelMapper modelMapper = new ModelMapper();
 
-    private AdminDTO convertToDto(Admin admin) {
+    public AdminDTO convertToDto(Admin admin) {
         return modelMapper.map(admin, AdminDTO.class);
     }
 
-    private Admin convertToEntity(AdminDTO adminDto) throws ParseException {
-        return modelMapper.map(adminDto, Admin.class);
+    public Admin convertToEntity() {
+        return modelMapper.map(this, Admin.class);
     }
 }
