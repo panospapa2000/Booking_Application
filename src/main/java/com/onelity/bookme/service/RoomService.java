@@ -24,9 +24,8 @@ public class RoomService {
         return roomRepository.findById(id);
     }
 
-    public String deleteRoom(int id){
+    public void deleteRoom(int id){
         roomRepository.deleteById(id);
-        return "room removed!" + id;
     }
 
     public Room saveRoom(Room room){

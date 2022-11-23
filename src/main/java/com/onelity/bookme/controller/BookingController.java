@@ -20,7 +20,7 @@ public class BookingController {
     public Optional<Booking> getBookingById(Integer id) {
         return bookingService.getBookingById(id);
     }
-    public String deleteBooking(Integer id) {
-        return bookingService.deleteBooking(id);
+    public void deleteBooking(Integer id) {
+        bookingService.deleteBooking(id);
     }
 }

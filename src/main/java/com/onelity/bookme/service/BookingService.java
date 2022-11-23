@@ -23,9 +23,8 @@ public class BookingService {
         return  bookingRepository.findById(id);
     }
 
-    public String deleteBooking(int id){
+    public void deleteBooking(int id){
         bookingRepository.deleteById(id);
-        return "booking removed!" + id;
     }
 
 }

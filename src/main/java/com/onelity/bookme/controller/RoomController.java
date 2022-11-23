@@ -20,8 +20,8 @@ public class RoomController {
     public Optional<Room> getRoomById(Integer id) {
         return roomService.getRoomById(id);
     }
-    public String deleteRoom(Integer id) {
-        return roomService.deleteRoom(id);
+    public void deleteRoom(Integer id) {
+        roomService.deleteRoom(id);
     }
     public Room saveRoom(Room room) {
         return roomService.saveRoom(room);
