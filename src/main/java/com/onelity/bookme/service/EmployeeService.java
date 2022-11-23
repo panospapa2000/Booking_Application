@@ -1,8 +1,7 @@
-package com.onelity.bookme.Service;
+package com.onelity.bookme.service;
 
 import com.onelity.bookme.model.Employee;
 import com.onelity.bookme.repository.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
