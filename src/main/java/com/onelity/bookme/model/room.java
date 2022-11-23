@@ -10,11 +10,11 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "room")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@Table(name = "room")
 public class Room {
 
     @Id

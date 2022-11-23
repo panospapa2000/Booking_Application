@@ -5,6 +5,7 @@ import com.onelity.bookme.service.AdminService;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class AdminController {
@@ -18,7 +19,7 @@ public class AdminController {
         return adminService.getAdmins();
     }
 
-    public Admin getAdminById(Integer id) {
+    public Optional<Admin> getAdminById(Integer id) {
         return adminService.getAdminById(id);
     }
 

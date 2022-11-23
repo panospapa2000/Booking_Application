@@ -42,8 +42,7 @@ public class EmployeeServiceTest {
         Employee employee = new Employee();
         employee.setFirstName(null);
         employee.setLastName("Papaioannou");
-        employee.setEmail("panpap200@gmail.com");
-        Assertions.assertThrows(DataIntegrityViolationException.class,
-                ()-> employeeService.saveEmployee(employee));
+        employee.setEmail("panpap2000@gmail.com");
+        Assertions.assertThrows(DataIntegrityViolationException.class, ()-> employeeService.saveEmployee(employee));
     }
 }
