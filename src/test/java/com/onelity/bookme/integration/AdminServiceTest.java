@@ -27,7 +27,6 @@ public class AdminServiceTest {
         Assertions.assertEquals(1, storedAdmins.size());
         Assertions.assertEquals(admin.getUsername(), storedAdmins.get(0).getUsername());
         Assertions.assertEquals(admin.getPassword(), storedAdmins.get(0).getPassword());
-        adminService.deleteAllAdmins();
         storedAdmins = adminService.getAdmins();
         Assertions.assertEquals(0, storedAdmins.size());
     }
@@ -36,13 +35,7 @@ public class AdminServiceTest {
     public void adminCRUD_negative_userNameNull() throws InterruptedException {
         Admin admin = new Admin();
         admin.setUsername(null);
-        admin.setPassword("asd");
+        admin.setPassword("random");
         Assertions.assertThrows(DataIntegrityViolationException.class, () -> adminService.saveAdmin(admin));
-    }
-
-    @Test
-    public void testDeleteAllAdmins(){
-        adminService.deleteAllAdmins();
-        System.out.println("All admins were removed!!!");
     }
 }

@@ -5,6 +5,7 @@ import com.onelity.bookme.service.RoomService;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class RoomController {
@@ -15,7 +16,8 @@ public class RoomController {
     public List<Room> getRooms() {
         return roomService.getRooms();
     }
-    public Room getRoomById(Integer id) {
+
+    public Optional<Room> getRoomById(Integer id) {
         return roomService.getRoomById(id);
     }
     public String deleteRoom(Integer id) {

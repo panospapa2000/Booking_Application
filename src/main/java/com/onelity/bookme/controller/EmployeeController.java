@@ -5,6 +5,7 @@ import com.onelity.bookme.service.EmployeeService;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class EmployeeController {
@@ -16,7 +17,7 @@ public class EmployeeController {
     public List<Employee> getEmployees() {
         return employeeService.getEmployees();
     }
-    public Employee getEmployeeById(Integer id) {
+    public Optional<Employee> getEmployeeById(Integer id) {
         return employeeService.getEmployeeById(id);
     }
     public Employee saveEmployee(Employee employee) {

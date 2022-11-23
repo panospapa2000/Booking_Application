@@ -6,18 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AdminService {
-    @Autowired
+
     private AdminRepository adminRepository;
+
+    public AdminService(AdminRepository adminRepository) {
+        this.adminRepository = adminRepository;
+    }
 
     public List<Admin> getAdmins(){
         return adminRepository.findAll();
     }
 
-    public Admin getAdminById(int id){
-        return adminRepository.findById(id).orElse(null);
+    public Optional<Admin> getAdminById(Integer id){
+        return adminRepository.findById(id);
     }
 
     public Admin saveAdmin(Admin admin){
@@ -30,5 +35,9 @@ public class AdminService {
 
     public void deleteAdminWithID(int id){
         adminRepository.deleteById(id);
+    }
+
+    public void deleteAllAdmins(){
+        adminRepository.deleteAll();
     }
 }
