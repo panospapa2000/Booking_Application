@@ -1,4 +1,4 @@
-package com.onelity.bookme.service;
+package com.onelity.bookme.Service;
 
 import com.onelity.bookme.model.Admin;
 import com.onelity.bookme.repository.AdminRepository;
