@@ -7,20 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class RoomServiceTest {
     @Autowired
     private RoomService roomService;
-    private static final String Room_Name1 = "ethousa_user";
-    private static final String Room_Name2 = "ethousa1";
-    private static final String Room_Name3 = "ethousa2";
+    private static final String ROOM_NAME_1 = "ethousa_user";
+    private static final String ROOM_NAME_2 = "ethousa1";
+    private static final String ROOM_NAME_3 = "ethousa2";
 
     @Test
     public void RoomCRUD_positive_size() throws InterruptedException {
         List<Room> OG_rooms = roomService.getRooms();
         Room room = new Room();
-        room.setName(Room_Name1);
+        room.setName(ROOM_NAME_1);
         roomService.saveRoom(room);
         List<Room> storedAdmins = roomService.getRooms();
         Assertions.assertEquals(OG_rooms.size() + 1 , storedAdmins.size());
@@ -29,10 +30,10 @@ public class RoomServiceTest {
     @Test
     public void roomCRUD_positive_credentials(){
         Room room = new Room();
-        room.setName(Room_Name2);
+        room.setName(ROOM_NAME_2);
         roomService.saveRoom(room);
-        List<Room> storedRooms = roomService.getRooms();
-        Assertions.assertEquals(room.getName(), storedRooms.get(storedRooms.size() - 1).getName());}
+        Optional<Room> storedRoom = roomService.getRoomById(room.getId());
+        Assertions.assertEquals(room.getName(), storedRoom.get().getName());}
 
     @Test
     public void roomCRUD_negative_usernameNull() throws InterruptedException {
@@ -51,7 +52,7 @@ public class RoomServiceTest {
     @Test
     public void adminCRUD_deleteById(){
         Room room = new Room();
-        room.setName(Room_Name3);
+        room.setName(ROOM_NAME_3);
         roomService.saveRoom(room);
         List<Room> storedRooms = roomService.getRooms();
         roomService.deleteRoom(room.getId());

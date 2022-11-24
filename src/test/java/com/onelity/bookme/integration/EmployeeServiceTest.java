@@ -3,6 +3,7 @@ package com.onelity.bookme.integration;
 
 import com.onelity.bookme.model.Employee;
 import com.onelity.bookme.service.EmployeeService;
+import net.bytebuddy.dynamic.DynamicType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,8 +91,9 @@ public class EmployeeServiceTest {
         employee.setEmail(TEST_EMAIL3);
         employeeService.saveEmployee(employee);
         Optional<Employee> storedEmployee = employeeService.getEmployeeById(employee.getId());
-        employeeService.deleteEmployee(employee.getId());
-        List<Employee> newEmployees = employeeService.getEmployees();
-        //Assertions.assertEquals(newEmployees.size(), storedEmployee.size() - 1);
+        employeeService.deleteEmployee(storedEmployee.get().getId());
+        //Assertions.assertEquals(employee, storedEmployee);
+        Optional<Employee> testEmpl = employeeService.getEmployeeById(employee.getId());
+        Assertions.assertNotEquals(storedEmployee,testEmpl);
     }
 }
