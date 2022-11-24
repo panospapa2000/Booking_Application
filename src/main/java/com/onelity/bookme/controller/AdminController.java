@@ -26,7 +26,7 @@ public class AdminController {
     }
 
     @PostMapping("/admins")
-    public Admin saveAdmin(@RequestBody AdminDTO adminDto, @RequestParam String custom_key) {
+    public Admin saveAdmin(@RequestBody AdminDTO adminDto) {
         Admin admin = adminDto.convertToEntity();
         return adminService.saveAdmin(admin);
     }
