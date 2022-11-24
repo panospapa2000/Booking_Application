@@ -35,7 +35,7 @@ public class Booking {
     @Column(name = "participants", nullable = false)
     private String participants;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name="room_id")
     private Room room;
 }

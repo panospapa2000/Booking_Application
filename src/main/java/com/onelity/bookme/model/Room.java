@@ -1,6 +1,7 @@
 package com.onelity.bookme.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +24,7 @@ public class Room {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(targetEntity = Booking.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "room_id", referencedColumnName = "id")
+    @OneToMany(mappedBy ="room",cascade = CascadeType.ALL)
+    @JsonIgnoreProperties
     private List<Booking> bookings;
 }
