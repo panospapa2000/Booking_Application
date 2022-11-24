@@ -16,33 +16,80 @@ public class EmployeeServiceTest {
 
     @Autowired
     private EmployeeService employeeService;
-    private static final String TEST_FIRSTNAME = "testFirstname";
-    private static final String TEST_LASTNAME = "testLastname";
-    private static final String TEST_EMAIL = "testEmail";
+    private static final String TEST_FIRSTNAME1 = "Panagiotis";
+    private static final String TEST_LASTNAME1 = "Papaioannou";
+    private static final String TEST_EMAIL1 = "panpap2000@gmail.com";
+
+    private static final String TEST_FIRSTNAME2 = "Themis";
+    private static final String TEST_LASTNAME2 = "Koukoutzelas";
+    private static final String TEST_EMAIL2 = "themkouk@gmail.com";
+
+    private static final String TEST_FIRSTNAME3 = "Savvas";
+    private static final String TEST_LASTNAME3 = "Salifoglou";
+    private static final String TEST_EMAIL3 = "savsal@gmail.com";
 
     @Test
-    public void employeeCRUD_positive() throws InterruptedException {
+    public void employeeCRUD_positive_size() throws InterruptedException {
+        List<Employee> OG_employees = employeeService.getEmployees();
         Employee employee = new Employee();
-        employee.setFirstName(TEST_FIRSTNAME);
-        employee.setLastName(TEST_LASTNAME);
-        employee.setEmail(TEST_EMAIL);
-        Thread.sleep(1000);
+        employee.setFirstName(TEST_FIRSTNAME1);
+        employee.setLastName(TEST_LASTNAME1);
+        employee.setEmail(TEST_EMAIL1);
         employeeService.saveEmployee(employee);
         List<Employee> storedEmployees = employeeService.getEmployees();
-        Assertions.assertEquals(1, storedEmployees.size());
-        Assertions.assertEquals(employee.getFirstName(), storedEmployees.get(0).getFirstName());
-        Assertions.assertEquals(employee.getLastName(), storedEmployees.get(0).getLastName());
-        Assertions.assertEquals(employee.getEmail(), storedEmployees.get(0).getEmail());
-        storedEmployees = employeeService.getEmployees();
-        Assertions.assertEquals(1, storedEmployees.size());
+        Assertions.assertEquals(OG_employees.size() + 1, storedEmployees.size());
     }
 
     @Test
-    public void employee_negative_firstNameNULL(){
+    public void employeeCRUD_positive_credentials(){
+        Employee employee = new Employee();
+        employee.setFirstName(TEST_FIRSTNAME2);
+        employee.setLastName(TEST_LASTNAME2);
+        employee.setEmail(TEST_EMAIL2);
+        employeeService.saveEmployee(employee);
+        List<Employee> storedEmployees = employeeService.getEmployees();
+        Assertions.assertEquals(employee.getFirstName(), storedEmployees.get(storedEmployees.size() - 1).getFirstName());
+        Assertions.assertEquals(employee.getLastName(), storedEmployees.get(storedEmployees.size() - 1).getLastName());
+        Assertions.assertEquals(employee.getEmail(), storedEmployees.get(storedEmployees.size() - 1).getEmail());
+    }
+
+    @Test
+    public void employeeCRUD_negative_firstnameNull(){
         Employee employee = new Employee();
         employee.setFirstName(null);
-        employee.setLastName("Papaioannou");
-        employee.setEmail("panpap2000@gmail.com");
-        Assertions.assertThrows(DataIntegrityViolationException.class, ()-> employeeService.saveEmployee(employee));
+        employee.setLastName("randomLastname");
+        employee.setEmail("randomEmail");
+        Assertions.assertThrows(DataIntegrityViolationException.class, () -> employeeService.saveEmployee(employee));
+    }
+
+    @Test
+    public void employeeCRUD_negative_lastnameNull(){
+        Employee employee = new Employee();
+        employee.setFirstName("randomFirstname");
+        employee.setLastName(null);
+        employee.setEmail("randomEmail");
+        Assertions.assertThrows(DataIntegrityViolationException.class, () -> employeeService.saveEmployee(employee));
+    }
+
+    @Test
+    public void employeeCRUD_negative_emailNull(){
+        Employee employee = new Employee();
+        employee.setFirstName("randomFirstname");
+        employee.setLastName("randomLastname");
+        employee.setEmail(null);
+        Assertions.assertThrows(DataIntegrityViolationException.class, () -> employeeService.saveEmployee(employee));
+    }
+
+    @Test
+    public void employeeCRUD_deleteById(){
+        Employee employee = new Employee();
+        employee.setFirstName(TEST_FIRSTNAME3);
+        employee.setLastName(TEST_LASTNAME3);
+        employee.setEmail(TEST_EMAIL3);
+        employeeService.saveEmployee(employee);
+        List<Employee> storedEmployees = employeeService.getEmployees();
+        employeeService.deleteEmployee(employee.getId());
+        List<Employee> newEmployees = employeeService.getEmployees();
+        Assertions.assertEquals(newEmployees.size(), storedEmployees.size() - 1);
     }
 }
