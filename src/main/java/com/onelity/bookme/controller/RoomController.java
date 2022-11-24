@@ -30,6 +30,10 @@ public class RoomController {
     public void deleteRoom(Integer id) {
         roomService.deleteRoom(id);
     }
+
+    public void deleteAllRooms() {
+        roomService.deleteAllRooms();
+    }
     public Room saveRoom(Room room) {
         return roomService.saveRoom(room);
     }

@@ -26,6 +26,10 @@ public class RoomService {
         roomRepository.deleteById(id);
     }
 
+    public void deleteAllRooms(){
+        roomRepository.deleteAll();
+    }
+
     public Room saveRoom(Room room){
         return roomRepository.save(room);
     }
