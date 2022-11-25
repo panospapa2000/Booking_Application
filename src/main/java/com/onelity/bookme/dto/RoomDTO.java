@@ -15,11 +15,11 @@ public class RoomDTO {
 
     ModelMapper modelMapper = new ModelMapper();
 
-    private AdminDTO convertToDto(Room room) {
-        return modelMapper.map(room, AdminDTO.class);
+    public RoomDTO convertToDto(Room room) {
+        return modelMapper.map(room, RoomDTO.class);
     }
 
-    private Room convertToEntity(RoomDTO adminDto) throws ParseException {
-        return modelMapper.map(adminDto, Room.class);
+    public Room convertToEntity() throws ParseException {
+        return modelMapper.map(this, Room.class);
     }
 }

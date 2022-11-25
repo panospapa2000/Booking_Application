@@ -26,11 +26,11 @@ public class BookingDTO {
 
     ModelMapper modelMapper = new ModelMapper();
 
-    private BookingDTO convertToDto(Booking booking) {
+    public BookingDTO convertToDto(Booking booking) {
         return modelMapper.map(booking, BookingDTO.class);
     }
 
-    private Booking convertToEntity(BookingDTO bookingDto) throws ParseException {
-        return modelMapper.map(bookingDto, Booking.class);
+    public Booking convertToEntity() throws ParseException {
+        return modelMapper.map(this, Booking.class);
     }
 }

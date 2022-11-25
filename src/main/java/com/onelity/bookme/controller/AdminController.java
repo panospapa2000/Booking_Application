@@ -21,7 +21,8 @@ public class AdminController {
         return adminService.getAdmins();
     }
 
-    public Optional<Admin> getAdminById(Integer id) {
+    @GetMapping("/admins/{id}")
+    public Optional<Admin> getAdminById(@PathVariable(value = "id") Integer id) {
         return adminService.getAdminById(id);
     }
 
@@ -30,16 +31,19 @@ public class AdminController {
         Admin admin = adminDto.convertToEntity();
         return adminService.saveAdmin(admin);
     }
-
+   // @PostMapping("/admin")
     public List<Admin> saveAllAdmins(List<Admin> admins) {
         return adminService.saveAllAdmins(admins);
     }
 
-    public void deleteAdminWithID(Integer id) {
+    @DeleteMapping("/admins/{id}")
+    public void deleteAdminWithID(@PathVariable(value = "id") Integer id) {
        adminService.deleteAdminWithID(id);
     }
 
+    @DeleteMapping("/admins")
     public void deleteAllAdmins() { adminService.deleteAllAdmins();}
+
 }
 
 

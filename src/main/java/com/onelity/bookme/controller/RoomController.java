@@ -1,11 +1,11 @@
 package com.onelity.bookme.controller;
 
+import com.onelity.bookme.dto.AdminDTO;
+import com.onelity.bookme.dto.RoomDTO;
 import com.onelity.bookme.model.Room;
 import com.onelity.bookme.service.RoomService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,14 +27,19 @@ public class RoomController {
         return ResponseEntity.ok().body(room);
     }
 
-    public void deleteRoom(Integer id) {
+    @DeleteMapping("/room/{id}")
+    public void deleteRoom(@PathVariable Integer id) {
         roomService.deleteRoom(id);
     }
 
+    @DeleteMapping("/room")
     public void deleteAllRooms() {
         roomService.deleteAllRooms();
     }
-    public Room saveRoom(Room room) {
+
+    @PostMapping("/room")
+    public Room saveRoom(@RequestBody RoomDTO roomDto) {
+        Room room = roomDto.convertToEntity();
         return roomService.saveRoom(room);
     }
 

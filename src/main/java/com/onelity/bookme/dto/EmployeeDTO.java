@@ -16,11 +16,11 @@ public class EmployeeDTO {
 
     ModelMapper modelMapper = new ModelMapper();
 
-    private EmployeeDTO convertToDto(Employee employee) {
+    public EmployeeDTO convertToDto(Employee employee) {
         return modelMapper.map(employee, EmployeeDTO.class);
     }
 
-    private Employee convertToEntity(EmployeeDTO EmployeeDto) throws ParseException {
-        return modelMapper.map(EmployeeDto, Employee.class);
+    public Employee convertToEntity() throws ParseException {
+        return modelMapper.map(this, Employee.class);
     }
 }

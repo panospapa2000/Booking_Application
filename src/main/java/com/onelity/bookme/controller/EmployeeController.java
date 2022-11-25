@@ -1,8 +1,10 @@
 package com.onelity.bookme.controller;
 
+import com.onelity.bookme.dto.EmployeeDTO;
+import com.onelity.bookme.model.Admin;
 import com.onelity.bookme.model.Employee;
 import com.onelity.bookme.service.EmployeeService;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,22 +16,28 @@ public class EmployeeController {
 
     public EmployeeController(EmployeeService employeeService) { this.employeeService = employeeService; }
 
+    @GetMapping("/employee")
     public List<Employee> getEmployees() {
         return employeeService.getEmployees();
     }
-    public Optional<Employee> getEmployeeById(Integer id) {
+    @GetMapping("/employee/{id}")
+    public Optional<Employee> getEmployeeById(@PathVariable(value = "id") Integer id) {
         return employeeService.getEmployeeById(id);
     }
-    public Employee saveEmployee(Employee employee) {
+    @PostMapping("/employee")
+    public Employee saveEmployee(@RequestBody EmployeeDTO employeeDto) {
+        Employee employee = employeeDto.convertToEntity();
         return employeeService.saveEmployee(employee);
     }
     public List<Employee> saveAllEmployees(List<Employee> employees) {
         return employeeService.saveAllEmployees(employees);
     }
+    @DeleteMapping("/employee")
     public void deleteAllEmployees(){
         employeeService.deleteAllEmployees();
     }
-    public void deleteEmployee(Integer id) {
+    @DeleteMapping("/employee/{id}")
+    public void deleteEmployee(@PathVariable(value = "id") Integer id) {
         employeeService.deleteEmployee(id);
     }
 
