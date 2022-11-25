@@ -47,6 +47,12 @@ public class BookingService {
     }
 
     /**
+     * This method deletes all bookings.
+     */
+    public void deleteAllBookings(){
+        bookingRepository.deleteAll();
+    }
+    /**
      * This method is serving a DELETE request of a specific booking, given its id.
      * @param id
      */

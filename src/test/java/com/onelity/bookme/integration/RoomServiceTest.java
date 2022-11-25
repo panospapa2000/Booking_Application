@@ -54,10 +54,10 @@ public class RoomServiceTest {
         Room room = new Room();
         room.setName(ROOM_NAME_3);
         roomService.saveRoom(room);
-        List<Room> storedRooms = roomService.getRooms();
+        Optional<Room> storedRoom = roomService.getRoomById(room.getId());
         roomService.deleteRoom(room.getId());
-        List<Room> newRooms = roomService.getRooms();
-        Assertions.assertEquals(newRooms.size(), storedRooms.size() -1 );
+        Optional<Room> testRoom = roomService.getRoomById(room.getId());
+        Assertions.assertNotEquals(storedRoom, testRoom);
     }
 
     }

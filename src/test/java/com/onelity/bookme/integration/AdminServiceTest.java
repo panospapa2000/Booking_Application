@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
 
+import javax.swing.plaf.OptionPaneUI;
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class AdminServiceTest {
@@ -16,7 +18,6 @@ public class AdminServiceTest {
     private AdminService adminService;
     private static final String TEST_USERNAME1 = "testUsername1";
     private static final String TEST_PASSWORD1 = "testPassword1";
-
     private static final String TEST_USERNAME2 = "testUsername2";
     private static final String TEST_PASSWORD2 = "testPassword2";
 
@@ -37,9 +38,10 @@ public class AdminServiceTest {
         admin.setUsername(TEST_USERNAME1);
         admin.setPassword(TEST_PASSWORD1);
         adminService.saveAdmin(admin);
-        List<Admin> storedAdmins = adminService.getAdmins();
-        Assertions.assertEquals(admin.getUsername(), storedAdmins.get(storedAdmins.size() - 1).getUsername());
-        Assertions.assertEquals(admin.getPassword(), storedAdmins.get(storedAdmins.size() - 1).getPassword());
+        Optional<Admin> storedAdmin = adminService.getAdminById(admin.getId());
+        Assertions.assertTrue(storedAdmin.isPresent());
+        Assertions.assertEquals(admin.getUsername(), storedAdmin.get().getUsername());
+        Assertions.assertEquals(admin.getPassword(), storedAdmin.get().getPassword());
     }
 
     @Test
@@ -71,9 +73,9 @@ public class AdminServiceTest {
         admin.setUsername(TEST_USERNAME2);
         admin.setPassword(TEST_PASSWORD2);
         adminService.saveAdmin(admin);
-        List<Admin> storedAdmins = adminService.getAdmins();
-        adminService.deleteAdminWithID(admin.getId());
-        List<Admin> newAdmins = adminService.getAdmins();
-        Assertions.assertEquals(newAdmins.size(), storedAdmins.size() -1 );
+        Optional<Admin> storedAdmin = adminService.getAdminById(admin.getId());
+        adminService.deleteAdminWithID(storedAdmin.get().getId());
+        Optional<Admin> testAdmin = adminService.getAdminById(admin.getId());
+        Assertions.assertNotEquals(storedAdmin, testAdmin);
     }
 }

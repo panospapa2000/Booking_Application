@@ -83,6 +83,11 @@ public class EmployeeServiceTest {
         Assertions.assertThrows(DataIntegrityViolationException.class, () -> employeeService.saveEmployee(employee));
     }
 
+    public void employeeCRUD_delete(){
+        employeeService.deleteAllEmployees();
+        List<Employee> employeesDeleted = employeeService.getEmployees();
+        Assertions.assertEquals(0, employeesDeleted.size());
+    }
     @Test
     public void employeeCRUD_deleteById(){
         Employee employee = new Employee();
@@ -92,7 +97,6 @@ public class EmployeeServiceTest {
         employeeService.saveEmployee(employee);
         Optional<Employee> storedEmployee = employeeService.getEmployeeById(employee.getId());
         employeeService.deleteEmployee(storedEmployee.get().getId());
-        //Assertions.assertEquals(employee, storedEmployee);
         Optional<Employee> testEmpl = employeeService.getEmployeeById(employee.getId());
         Assertions.assertNotEquals(storedEmployee,testEmpl);
     }

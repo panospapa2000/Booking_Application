@@ -26,6 +26,9 @@ public class EmployeeController {
     public List<Employee> saveAllEmployees(List<Employee> employees) {
         return employeeService.saveAllEmployees(employees);
     }
+    public void deleteAllEmployees(){
+        employeeService.deleteAllEmployees();
+    }
     public void deleteEmployee(Integer id) {
         employeeService.deleteEmployee(id);
     }

@@ -56,6 +56,13 @@ public class EmployeeService {
     }
 
     /**
+     * This method deletes all employees.
+     */
+    public void deleteAllEmployees(){
+        employeeRepository.deleteAll();
+    }
+
+    /**
      * This method is serving a DELETE request of a specific employee, given his id.
      * @param id
      */

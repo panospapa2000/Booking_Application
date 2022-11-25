@@ -20,6 +20,9 @@ public class BookingController {
     public Optional<Booking> getBookingById(Integer id) {
         return bookingService.getBookingById(id);
     }
+    public void deleteAllBookings(){
+        bookingService.deleteAllBookings();
+    }
     public void deleteBooking(Integer id) {
         bookingService.deleteBooking(id);
     }

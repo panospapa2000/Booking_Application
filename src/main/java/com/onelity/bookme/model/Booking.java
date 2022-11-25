@@ -1,5 +1,6 @@
 package com.onelity.bookme.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,6 +36,7 @@ public class Booking {
     @Column(name = "participants", nullable = false)
     private String participants;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="room_id")
     private Room room;

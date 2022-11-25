@@ -40,8 +40,6 @@ public class AdminController {
     }
 
     public void deleteAllAdmins() { adminService.deleteAllAdmins();}
-
-
 }
 
 

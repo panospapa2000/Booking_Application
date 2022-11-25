@@ -24,7 +24,7 @@ public class Room {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(mappedBy ="room",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy ="room", cascade = CascadeType.ALL)
     @JsonIgnoreProperties
     private List<Booking> bookings;
 }
