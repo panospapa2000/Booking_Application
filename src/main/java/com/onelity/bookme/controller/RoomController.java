@@ -42,8 +42,7 @@ public class RoomController {
         Room room = roomDto.convertToEntity();
         return roomService.saveRoom(room);
     }
-
-    public List<Room> saveAllRooms(List<Room> rooms) {
+    public List<Room> saveAllRooms(@RequestBody List<Room> rooms) {
         return roomService.saveAllRooms(rooms);
     }
 

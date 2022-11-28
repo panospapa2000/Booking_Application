@@ -25,13 +25,14 @@ public class EmployeeController {
         return employeeService.getEmployeeById(id);
     }
     @PostMapping("/employee")
-    public Employee saveEmployee(@RequestBody EmployeeDTO employeeDto) {
+    public Employee saveEmployee(@ModelAttribute EmployeeDTO employeeDto) {
         Employee employee = employeeDto.convertToEntity();
         return employeeService.saveEmployee(employee);
     }
-    public List<Employee> saveAllEmployees(List<Employee> employees) {
+    public List<Employee> saveAllEmployees(@RequestBody List<Employee> employees) {
         return employeeService.saveAllEmployees(employees);
     }
+
     @DeleteMapping("/employee")
     public void deleteAllEmployees(){
         employeeService.deleteAllEmployees();

@@ -4,9 +4,8 @@ import com.onelity.bookme.model.Room;
 import lombok.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.expression.ParseException;
-
-import javax.persistence.ManyToOne;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -20,9 +19,7 @@ public class BookingDTO {
     private Timestamp start_timestamp;
     private Timestamp end_timestamp;
     private String participants;
-
-    @ManyToOne(optional = false)
-    Room room;
+    private Room room;
 
     ModelMapper modelMapper = new ModelMapper();
 
@@ -30,7 +27,21 @@ public class BookingDTO {
         return modelMapper.map(booking, BookingDTO.class);
     }
 
+    public static void main(String args[]){
+        String htmlDate = "2022-11-28T16:07";
+        LocalDateTime javaDate = LocalDateTime.parse(htmlDate);
+        System.out.println(javaDate);
+    }
+
     public Booking convertToEntity() throws ParseException {
-        return modelMapper.map(this, Booking.class);
+        Booking booking = new Booking();
+        booking.setParticipants(this.getParticipants());
+        booking.setTitle(this.getTitle());
+        booking.setId(this.getId());
+        booking.setDescription(this.getDescription());
+//        booking.setStart(Timestamp.valueOf(start_timestamp));
+//        booking.setEnd(LocalDateTime.parse(end_timestamp));
+        booking.setRoom(this.getRoom());
+        return booking;
     }
 }
