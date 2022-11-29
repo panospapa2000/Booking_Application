@@ -4,6 +4,7 @@ import com.onelity.bookme.service.AdminService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import java.util.List;
@@ -27,6 +28,9 @@ public class AdminServiceTest {
         adminService.saveAdmin(admin);
         List<Admin> storedAdmins = adminService.getAdmins();
         Assertions.assertEquals(OG_admins.size() + 1 , storedAdmins.size());
+        adminService.deleteAdminWithID(admin.getId());
+        List<Admin> storedAdminsFinal = adminService.getAdmins();
+        Assertions.assertEquals(OG_admins.size(),storedAdminsFinal.size());
     }
 
     @Test
@@ -39,6 +43,9 @@ public class AdminServiceTest {
         Assertions.assertTrue(storedAdmin.isPresent());
         Assertions.assertEquals(admin.getUsername(), storedAdmin.get().getUsername());
         Assertions.assertEquals(admin.getPassword(), storedAdmin.get().getPassword());
+        adminService.deleteAdminWithID(storedAdmin.get().getId());
+        Optional<Admin> storedAdminFinal = adminService.getAdminById(admin.getId());
+        Assertions.assertTrue(storedAdminFinal.isEmpty());
     }
 
     @Test
@@ -59,9 +66,11 @@ public class AdminServiceTest {
 
     @Test
     public void adminCRUD_delete(){
+        List<Admin> OG_Admins = adminService.getAdmins();
         adminService.deleteAllAdmins();
         List<Admin> adminsDeleted = adminService.getAdmins();
         Assertions.assertEquals(0 , adminsDeleted.size());
+        adminService.saveAllAdmins(OG_Admins);
     }
 
     @Test

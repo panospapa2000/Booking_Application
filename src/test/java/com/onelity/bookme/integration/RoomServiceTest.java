@@ -23,8 +23,11 @@ public class RoomServiceTest {
         Room room = new Room();
         room.setName(ROOM_NAME_1);
         roomService.saveRoom(room);
-        List<Room> storedAdmins = roomService.getRooms();
-        Assertions.assertEquals(OG_rooms.size() + 1 , storedAdmins.size());
+        List<Room> storedRooms = roomService.getRooms();
+        Assertions.assertEquals(OG_rooms.size() + 1 , storedRooms.size());
+        roomService.deleteRoom(room.getId());
+        List<Room> storedRoomsFinal = roomService.getRooms();
+        Assertions.assertEquals(OG_rooms.size(),storedRoomsFinal.size());
     }
 
     @Test
@@ -33,7 +36,12 @@ public class RoomServiceTest {
         room.setName(ROOM_NAME_2);
         roomService.saveRoom(room);
         Optional<Room> storedRoom = roomService.getRoomById(room.getId());
-        Assertions.assertEquals(room.getName(), storedRoom.get().getName());}
+        Assertions.assertTrue(storedRoom.isPresent());
+        Assertions.assertEquals(room.getName(), storedRoom.get().getName());
+        roomService.deleteRoom(room.getId());
+        Optional<Room> storedRoomFinal = roomService.getRoomById(room.getId());
+        Assertions.assertTrue(storedRoomFinal.isEmpty());
+    }
 
     @Test
     public void roomCRUD_negative_usernameNull() throws InterruptedException {
@@ -44,9 +52,11 @@ public class RoomServiceTest {
 
     @Test
     public void roomCRUD_delete(){
+        List<Room> OG_Rooms = roomService.getRooms();
         roomService.deleteAllRooms();
         List<Room> roomsDeleted = roomService.getRooms();
         Assertions.assertEquals(0 , roomsDeleted.size());
+        roomService.saveAllRooms(OG_Rooms);
     }
 
     @Test
@@ -59,5 +69,4 @@ public class RoomServiceTest {
         Optional<Room> testRoom = roomService.getRoomById(room.getId());
         Assertions.assertNotEquals(storedRoom, testRoom);
     }
-
-    }
+}

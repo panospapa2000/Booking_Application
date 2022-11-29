@@ -44,6 +44,15 @@ public class BookingService {
         return bookingRepository.save(booking);
     }
 
+
+    /**
+     * This method is serving a POST request of a list of bookings, saving them to the database.
+     * @param bookings
+     * @return
+     */
+    public List<Booking> saveBookings(List<Booking> bookings){
+        return bookingRepository.saveAll(bookings);
+    }
     /**
      * This method deletes all bookings.
      */

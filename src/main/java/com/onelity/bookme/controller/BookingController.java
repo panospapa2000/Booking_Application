@@ -1,5 +1,6 @@
 package com.onelity.bookme.controller;
 import com.onelity.bookme.dto.BookingDTO;
+import com.onelity.bookme.model.Admin;
 import com.onelity.bookme.model.Booking;
 import com.onelity.bookme.service.BookingService;
 import org.springframework.web.bind.annotation.*;
@@ -32,5 +33,10 @@ public class BookingController {
     public Booking saveBooking(@RequestBody BookingDTO bookingDto) {
         Booking booking = bookingDto.convertToEntity();
         return bookingService.saveBooking(booking);
+    }
+
+    @PostMapping("/bookingsList")
+    public List<Booking> saveAllBookings(@RequestBody List<Booking> bookings) {
+        return bookingService.saveBookings(bookings);
     }
 }

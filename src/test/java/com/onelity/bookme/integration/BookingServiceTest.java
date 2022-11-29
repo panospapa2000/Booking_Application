@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.Assert;
+
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -43,6 +45,9 @@ public class BookingServiceTest {
         bookingService.saveBooking(booking);
         List<Booking> storedBookings = bookingService.getBookings();
         Assertions.assertEquals(OG_Bookings.size() + 1, storedBookings.size());
+        bookingService.deleteBooking(booking.getId());
+        List<Booking> storedBookingsFinal = bookingService.getBookings();
+        Assertions.assertEquals(OG_Bookings.size(),storedBookingsFinal.size());
     }
 
     @Test
@@ -65,13 +70,18 @@ public class BookingServiceTest {
         Assertions.assertEquals(booking.getParticipants(), storedBooking.get().getParticipants());
         Assertions.assertEquals(booking.getStart_timestamp(), storedBooking.get().getStart_timestamp());
         Assertions.assertEquals(booking.getEnd_timestamp(), storedBooking.get().getEnd_timestamp());
+        bookingService.deleteBooking(storedBooking.get().getId());
+        Optional<Booking> storedBookingFinal = bookingService.getBookingById(booking.getId());
+        Assertions.assertTrue(storedBookingFinal.isEmpty());
     }
 
     @Test
     public void bookingCRUD_delete(){
+        List<Booking> OG_Bookings = bookingService.getBookings();
         bookingService.deleteAllBookings();
         List<Booking> bookingsDeleted = bookingService.getBookings();
         Assertions.assertEquals(0, bookingsDeleted.size());
+        bookingService.saveBookings(OG_Bookings);
     }
 
     @Test
