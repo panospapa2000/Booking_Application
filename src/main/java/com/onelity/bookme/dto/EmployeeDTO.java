@@ -16,7 +16,7 @@ public class EmployeeDTO {
     ModelMapper modelMapper = new ModelMapper();
 
     public EmployeeDTO convertToDto(Employee employee) {
-        return modelMapper.map(employee, EmployeeDTO.class);
+        return modelMapper.map(this, EmployeeDTO.class);
     }
 
     public Employee convertToEntity() {

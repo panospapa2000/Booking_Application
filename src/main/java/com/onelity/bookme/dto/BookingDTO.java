@@ -23,7 +23,7 @@ public class BookingDTO {
     ModelMapper modelMapper = new ModelMapper();
 
     public BookingDTO convertToDto(Booking booking) {
-        return modelMapper.map(booking, BookingDTO.class);
+        return modelMapper.map(this, BookingDTO.class);
     }
 
     public static void main(String args[]){
