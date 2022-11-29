@@ -1,7 +1,6 @@
 package com.onelity.bookme.dto;
 import com.onelity.bookme.model.Admin;
 import lombok.*;
-import org.springframework.expression.ParseException;
 import org.modelmapper.ModelMapper;
 
 @Data

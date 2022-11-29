@@ -4,8 +4,6 @@ import com.onelity.bookme.model.Room;
 import lombok.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.expression.ParseException;
-
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 

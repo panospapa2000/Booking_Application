@@ -1,10 +1,8 @@
 package com.onelity.bookme.controller;
-
 import com.onelity.bookme.dto.AdminDTO;
 import com.onelity.bookme.model.Admin;
 import com.onelity.bookme.service.AdminService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 

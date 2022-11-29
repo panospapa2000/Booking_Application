@@ -1,12 +1,9 @@
 package com.onelity.bookme.controller;
-
-import com.onelity.bookme.dto.AdminDTO;
 import com.onelity.bookme.dto.RoomDTO;
 import com.onelity.bookme.model.Room;
 import com.onelity.bookme.service.RoomService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 

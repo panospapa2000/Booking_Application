@@ -1,15 +1,11 @@
 package com.onelity.bookme.integration;
-
-
 import com.onelity.bookme.model.Employee;
 import com.onelity.bookme.service.EmployeeService;
-import net.bytebuddy.dynamic.DynamicType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
-
 import java.util.List;
 import java.util.Optional;
 

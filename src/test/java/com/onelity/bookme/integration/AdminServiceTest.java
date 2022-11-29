@@ -1,5 +1,4 @@
 package com.onelity.bookme.integration;
-
 import com.onelity.bookme.model.Admin;
 import com.onelity.bookme.service.AdminService;
 import org.junit.jupiter.api.Assertions;
@@ -7,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
-
-import javax.swing.plaf.OptionPaneUI;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,6 +1,4 @@
 package com.onelity.bookme.integration;
-
-
 import com.onelity.bookme.model.Booking;
 import com.onelity.bookme.model.Room;
 import com.onelity.bookme.service.BookingService;
@@ -9,7 +7,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.List;

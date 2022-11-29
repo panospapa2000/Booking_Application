@@ -1,9 +1,7 @@
 package com.onelity.bookme.service;
-
 import com.onelity.bookme.model.Admin;
 import com.onelity.bookme.repository.AdminRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
