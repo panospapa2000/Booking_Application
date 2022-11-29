@@ -16,32 +16,34 @@ public class RoomController {
 
     public RoomController(RoomService roomService) { this.roomService = roomService; }
 
-    @GetMapping("/room")
+    @GetMapping("/rooms")
     public List<Room> getRooms() {
         return roomService.getRooms();
     }
 
-    @GetMapping("/room/{id}")
+    @GetMapping("/rooms/{id}")
     public ResponseEntity<Optional<Room>> getRoomById(@PathVariable(value = "id") Integer roomId){
         Optional<Room> room = roomService.getRoomById(roomId);
         return ResponseEntity.ok().body(room);
     }
 
-    @DeleteMapping("/room/{id}")
+    @DeleteMapping("/rooms/{id}")
     public void deleteRoom(@PathVariable Integer id) {
         roomService.deleteRoom(id);
     }
 
-    @DeleteMapping("/room")
+    @DeleteMapping("/rooms")
     public void deleteAllRooms() {
         roomService.deleteAllRooms();
     }
 
-    @PostMapping("/room")
+    @PostMapping("/rooms")
     public Room saveRoom(@RequestBody RoomDTO roomDto) {
         Room room = roomDto.convertToEntity();
         return roomService.saveRoom(room);
     }
+
+    @PostMapping("/roomsList")
     public List<Room> saveAllRooms(@RequestBody List<Room> rooms) {
         return roomService.saveAllRooms(rooms);
     }

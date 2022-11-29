@@ -12,7 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,8 +40,8 @@ public class BookingServiceTest {
         booking.setRoom(booking_Room1);
         booking.setTitle(BOOKING_TITLE1);
         booking.setDescription(BOOKING_DESCRIPTION_1);
-        booking.setStart(Timestamp.valueOf(StartTimeStamp));
-        booking.setEnd(Timestamp.valueOf(EndTimeStamp));
+        booking.setStart_timestamp(Timestamp.valueOf(StartTimeStamp));
+        booking.setEnd_timestamp(Timestamp.valueOf(EndTimeStamp));
         booking.setParticipants(BOOKING_PARTICIPANTS_1);
         bookingService.saveBooking(booking);
         List<Booking> storedBookings = bookingService.getBookings();
@@ -57,8 +56,8 @@ public class BookingServiceTest {
         booking.setRoom(booking_Room1);
         booking.setTitle(BOOKING_TITLE1);
         booking.setDescription(BOOKING_DESCRIPTION_1);
-        booking.setStart(Timestamp.valueOf(StartTimeStamp));
-        booking.setEnd(Timestamp.valueOf(EndTimeStamp));
+        booking.setStart_timestamp(Timestamp.valueOf(StartTimeStamp));
+        booking.setEnd_timestamp(Timestamp.valueOf(EndTimeStamp));
         booking.setParticipants(BOOKING_PARTICIPANTS_1);
         bookingService.saveBooking(booking);
         Optional<Booking> storedBooking = bookingService.getBookingById(booking.getId());
@@ -67,8 +66,8 @@ public class BookingServiceTest {
         Assertions.assertEquals(booking.getTitle(), storedBooking.get().getTitle());
         Assertions.assertEquals(booking.getDescription(), storedBooking.get().getDescription());
         Assertions.assertEquals(booking.getParticipants(), storedBooking.get().getParticipants());
-        Assertions.assertEquals(booking.getStart(), storedBooking.get().getStart());
-        Assertions.assertEquals(booking.getEnd(), storedBooking.get().getEnd());
+        Assertions.assertEquals(booking.getStart_timestamp(), storedBooking.get().getStart_timestamp());
+        Assertions.assertEquals(booking.getEnd_timestamp(), storedBooking.get().getEnd_timestamp());
     }
 
     @Test
@@ -86,8 +85,8 @@ public class BookingServiceTest {
         booking.setRoom(booking_Room1);
         booking.setTitle(BOOKING_TITLE1);
         booking.setDescription(BOOKING_DESCRIPTION_1);
-        booking.setStart(Timestamp.valueOf(StartTimeStamp));
-        booking.setEnd(Timestamp.valueOf(EndTimeStamp));
+        booking.setStart_timestamp(Timestamp.valueOf(StartTimeStamp));
+        booking.setEnd_timestamp(Timestamp.valueOf(EndTimeStamp));
         booking.setParticipants(BOOKING_PARTICIPANTS_1);
         bookingService.saveBooking(booking);
         Optional<Booking> storedBooking = bookingService.getBookingById(booking.getId());

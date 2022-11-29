@@ -31,6 +31,8 @@ public class AdminController {
         Admin admin = adminDto.convertToEntity();
         return adminService.saveAdmin(admin);
     }
+
+    @PostMapping("/adminsList")
     public List<Admin> saveAllAdmins(@RequestBody List<Admin> admins) {
         return adminService.saveAllAdmins(admins);
     }

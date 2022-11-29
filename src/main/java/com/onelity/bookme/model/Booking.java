@@ -28,15 +28,14 @@ public class Booking {
     private String description;
 
     @Column(name = "start_timestamp", nullable = false)
-    private Timestamp start;
+    private Timestamp start_timestamp;
 
     @Column(name = "end_timestamp", nullable = false)
-    private Timestamp end;
+    private Timestamp end_timestamp;
 
     @Column(name = "participants", nullable = false)
     private String participants;
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="room_id")
     private Room room;

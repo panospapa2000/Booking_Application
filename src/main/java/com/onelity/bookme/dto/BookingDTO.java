@@ -4,6 +4,8 @@ import com.onelity.bookme.model.Room;
 import lombok.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.expression.ParseException;
+
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
@@ -39,8 +41,8 @@ public class BookingDTO {
         booking.setTitle(this.getTitle());
         booking.setId(this.getId());
         booking.setDescription(this.getDescription());
-//        booking.setStart(Timestamp.valueOf(start_timestamp));
-//        booking.setEnd(LocalDateTime.parse(end_timestamp));
+        booking.setStart_timestamp(Timestamp.valueOf(start_timestamp.toLocalDateTime()));
+        booking.setEnd_timestamp(Timestamp.valueOf(end_timestamp.toLocalDateTime()));
         booking.setRoom(this.getRoom());
         return booking;
     }
