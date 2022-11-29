@@ -3,7 +3,6 @@ import com.onelity.bookme.model.Booking;
 import com.onelity.bookme.model.Room;
 import lombok.*;
 import org.modelmapper.ModelMapper;
-import org.springframework.expression.ParseException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
@@ -33,7 +32,7 @@ public class BookingDTO {
         System.out.println(javaDate);
     }
 
-    public Booking convertToEntity() throws ParseException {
+    public Booking convertToEntity() {
         Booking booking = new Booking();
         booking.setParticipants(this.getParticipants());
         booking.setTitle(this.getTitle());

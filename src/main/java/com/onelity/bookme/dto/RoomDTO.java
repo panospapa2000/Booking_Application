@@ -3,7 +3,6 @@ import com.onelity.bookme.model.Booking;
 import com.onelity.bookme.model.Room;
 import lombok.*;
 import org.modelmapper.ModelMapper;
-import org.springframework.expression.ParseException;
 import java.util.List;
 
 @Data
@@ -21,7 +20,7 @@ public class RoomDTO {
         return modelMapper.map(room, RoomDTO.class);
     }
 
-    public Room convertToEntity() throws ParseException {
+    public Room convertToEntity() {
         return modelMapper.map(this, Room.class);
     }
 }

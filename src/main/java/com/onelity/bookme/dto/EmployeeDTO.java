@@ -2,7 +2,6 @@ package com.onelity.bookme.dto;
 import com.onelity.bookme.model.Employee;
 import lombok.*;
 import org.modelmapper.ModelMapper;
-import org.springframework.expression.ParseException;
 
 @Data
 @NoArgsConstructor
@@ -20,7 +19,7 @@ public class EmployeeDTO {
         return modelMapper.map(employee, EmployeeDTO.class);
     }
 
-    public Employee convertToEntity() throws ParseException {
+    public Employee convertToEntity() {
         return modelMapper.map(this, Employee.class);
     }
 }
