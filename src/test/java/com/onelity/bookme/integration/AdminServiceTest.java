@@ -1,36 +1,22 @@
 package com.onelity.bookme.integration;
 import com.onelity.bookme.model.Admin;
-import com.onelity.bookme.repository.AdminRepository;
 import com.onelity.bookme.service.AdminService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.dao.DataIntegrityViolationException;
 import java.util.List;
 import java.util.Optional;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest
 public class AdminServiceTest {
-
-    @MockBean
-    private AdminRepository adminRepository;
     @Autowired
     private AdminService adminService;
     private static final String TEST_USERNAME1 = "testUsername1";
     private static final String TEST_PASSWORD1 = "testPassword1";
     private static final String TEST_USERNAME2 = "testUsername2";
     private static final String TEST_PASSWORD2 = "testPassword2";
-
-    @Test
-    public void postRequestMock(){
-        Admin admin = new Admin(Mockito.anyInt(), "mockUsername", "mockPassword");
-        Mockito.when(adminRepository.findById(admin.getId())).thenReturn(Optional.of(admin));
-        Mockito.when(adminRepository.save(admin)).thenReturn(admin);
-        Assertions.assertNotEquals(Optional.of(admin), null);
-    }
 
     @Test
     public void adminCRUD_positive_size() {
@@ -62,7 +48,7 @@ public class AdminServiceTest {
     }
 
     @Test
-    public void adminCRUD_negative_usernameNull() throws InterruptedException {
+    public void adminCRUD_negative_usernameNull(){
         Admin admin = new Admin();
         admin.setUsername(null);
         admin.setPassword("randomPassword");
@@ -70,7 +56,7 @@ public class AdminServiceTest {
     }
 
     @Test
-    public void adminCRUD_negative_passwordNull() throws InterruptedException {
+    public void adminCRUD_negative_passwordNull(){
         Admin admin = new Admin();
         admin.setUsername("randomUsername");
         admin.setPassword(null);

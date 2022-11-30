@@ -1,22 +1,16 @@
 package com.onelity.bookme.integration;
 import com.onelity.bookme.model.Employee;
-import com.onelity.bookme.repository.EmployeeRepository;
 import com.onelity.bookme.service.EmployeeService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.dao.DataIntegrityViolationException;
 import java.util.List;
 import java.util.Optional;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest
 public class EmployeeServiceTest {
-
-    @MockBean
-    private EmployeeRepository employeeRepository;
     @Autowired
     private EmployeeService employeeService;
     private static final String TEST_FIRSTNAME1 = "Panagiotis";
@@ -30,17 +24,8 @@ public class EmployeeServiceTest {
     private static final String TEST_FIRSTNAME3 = "Savvas";
     private static final String TEST_LASTNAME3 = "Salifoglou";
     private static final String TEST_EMAIL3 = "savsal@gmail.com";
-
-
     @Test
-    public void postRequestMock(){
-        Employee employee = new Employee(Mockito.anyInt(), "MockFirstname", "MockLastname", "MockEmail");
-        Mockito.when(employeeRepository.findById(employee.getId())).thenReturn(Optional.of(employee));
-        Mockito.when(employeeRepository.save(employee)).thenReturn(employee);
-        Assertions.assertNotEquals(Optional.of(employee), null);
-    }
-    @Test
-    public void employeeCRUD_positive_size() throws InterruptedException {
+    public void employeeCRUD_positive_size(){
         List<Employee> OG_employees = employeeService.getEmployees();
         Employee employee = new Employee();
         employee.setFirstName(TEST_FIRSTNAME1);

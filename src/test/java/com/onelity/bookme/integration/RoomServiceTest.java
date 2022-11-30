@@ -1,41 +1,24 @@
 package com.onelity.bookme.integration;
 import com.onelity.bookme.model.Room;
-import com.onelity.bookme.repository.RoomRepository;
 import com.onelity.bookme.service.RoomService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.dao.DataIntegrityViolationException;
 import java.util.List;
 import java.util.Optional;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest
 public class RoomServiceTest {
-
-    @MockBean
-    private RoomRepository roomRepository;
     @Autowired
     private RoomService roomService;
-    private static final String ROOM_NAME_1 = "ethousa_user";
-    private static final String ROOM_NAME_2 = "ethousa1";
-    private static final String ROOM_NAME_3 = "ethousa2";
-
-
-    @Test
-    public void postRequestMock(){
-        Room room = new Room();
-        room.setId(Mockito.anyInt());
-        room.setName("Mockito Room");
-        Mockito.when(roomRepository.findById(room.getId())).thenReturn(Optional.of(room));
-        Mockito.when(roomRepository.save(room)).thenReturn(room);
-        Assertions.assertNotEquals(Optional.of(room), null);
-    }
+    private static final String ROOM_NAME_1 = "Meeting Room";
+    private static final String ROOM_NAME_2 = "Diner Room";
+    private static final String ROOM_NAME_3 = "Conference Room";
 
     @Test
-    public void RoomCRUD_positive_size() throws InterruptedException {
+    public void roomCRUD_positive_size() throws InterruptedException {
         List<Room> OG_rooms = roomService.getRooms();
         Room room = new Room();
         room.setName(ROOM_NAME_1);
@@ -61,7 +44,7 @@ public class RoomServiceTest {
     }
 
     @Test
-    public void roomCRUD_negative_usernameNull() throws InterruptedException {
+    public void roomCRUD_negative_roomNameNull(){
         Room room = new Room();
         room.setName(null);
         Assertions.assertThrows(DataIntegrityViolationException.class, () -> roomService.saveRoom(room));
@@ -77,7 +60,7 @@ public class RoomServiceTest {
     }
 
     @Test
-    public void adminCRUD_deleteById(){
+    public void roomCRUD_deleteById(){
         Room room = new Room();
         room.setName(ROOM_NAME_3);
         roomService.saveRoom(room);

@@ -6,14 +6,12 @@ import com.onelity.bookme.model.Room;
 import com.onelity.bookme.service.BookingService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.verification.Times;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest
 public class BookingDTOTest {
 
     @Autowired

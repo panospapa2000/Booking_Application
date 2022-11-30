@@ -1,50 +1,31 @@
 package com.onelity.bookme.integration;
 import com.onelity.bookme.model.Booking;
 import com.onelity.bookme.model.Room;
-import com.onelity.bookme.repository.BookingRepository;
 import com.onelity.bookme.service.BookingService;
 import com.onelity.bookme.service.RoomService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest
 public class BookingServiceTest {
 
     @Autowired
     private BookingService bookingService;
     @Autowired
     private RoomService roomService;
-
-    @MockBean
-    private BookingRepository bookingRepository;
-
-    private static final String BOOKING_TITLE1="Cyraco";
+    private static final String BOOKING_TITLE = "Cyraco";
     private Room booking_Room1;
-    private static final String BOOKING_DESCRIPTION_1 ="Cyraco Meeting";
-    private static final String BOOKING_PARTICIPANTS_1 = "Kostas, Giorgos, Panos";
+    private static final String BOOKING_DESCRIPTION ="Cyraco Meeting";
+    private static final String BOOKING_PARTICIPANTS = "Kostas, Giorgos, Panos";
 
     String StartTimeStamp = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new java.util.Date());
     String EndTimeStamp = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new java.util.Date());
-
-    @Test
-    public void postRequestMock(){
-        Booking booking = new Booking(Mockito.anyInt(), BOOKING_TITLE1, BOOKING_DESCRIPTION_1,
-                Timestamp.valueOf(StartTimeStamp), Timestamp.valueOf(EndTimeStamp), BOOKING_PARTICIPANTS_1, booking_Room1);
-        Mockito.when(bookingRepository.findById(booking.getId())).thenReturn(Optional.of(booking));
-        Mockito.when(bookingRepository.save(booking)).thenReturn(booking);
-        Assertions.assertNotEquals(Optional.of(booking), null);
-    }
-
     @Test
     public void bookingCRUD_positive_size(){
         List<Booking> OG_Bookings = bookingService.getBookings();
@@ -52,11 +33,11 @@ public class BookingServiceTest {
         List<Room> rooms = roomService.getRooms();
         booking_Room1=rooms.get(2);
         booking.setRoom(booking_Room1);
-        booking.setTitle(BOOKING_TITLE1);
-        booking.setDescription(BOOKING_DESCRIPTION_1);
+        booking.setTitle(BOOKING_TITLE);
+        booking.setDescription(BOOKING_DESCRIPTION);
         booking.setStart_timestamp(Timestamp.valueOf(StartTimeStamp));
         booking.setEnd_timestamp(Timestamp.valueOf(EndTimeStamp));
-        booking.setParticipants(BOOKING_PARTICIPANTS_1);
+        booking.setParticipants(BOOKING_PARTICIPANTS);
         bookingService.saveBooking(booking);
         List<Booking> storedBookings = bookingService.getBookings();
         Assertions.assertEquals(OG_Bookings.size() + 1, storedBookings.size());
@@ -71,11 +52,11 @@ public class BookingServiceTest {
         List<Room> rooms = roomService.getRooms();
         booking_Room1=rooms.get(1);
         booking.setRoom(booking_Room1);
-        booking.setTitle(BOOKING_TITLE1);
-        booking.setDescription(BOOKING_DESCRIPTION_1);
+        booking.setTitle(BOOKING_TITLE);
+        booking.setDescription(BOOKING_DESCRIPTION);
         booking.setStart_timestamp(Timestamp.valueOf(StartTimeStamp));
         booking.setEnd_timestamp(Timestamp.valueOf(EndTimeStamp));
-        booking.setParticipants(BOOKING_PARTICIPANTS_1);
+        booking.setParticipants(BOOKING_PARTICIPANTS);
         bookingService.saveBooking(booking);
         Optional<Booking> storedBooking = bookingService.getBookingById(booking.getId());
         Assertions.assertTrue(storedBooking.isPresent());
@@ -105,11 +86,11 @@ public class BookingServiceTest {
         List<Room> rooms = roomService.getRooms();
         booking_Room1=rooms.get(1);
         booking.setRoom(booking_Room1);
-        booking.setTitle(BOOKING_TITLE1);
-        booking.setDescription(BOOKING_DESCRIPTION_1);
+        booking.setTitle(BOOKING_TITLE);
+        booking.setDescription(BOOKING_DESCRIPTION);
         booking.setStart_timestamp(Timestamp.valueOf(StartTimeStamp));
         booking.setEnd_timestamp(Timestamp.valueOf(EndTimeStamp));
-        booking.setParticipants(BOOKING_PARTICIPANTS_1);
+        booking.setParticipants(BOOKING_PARTICIPANTS);
         bookingService.saveBooking(booking);
         Optional<Booking> storedBooking = bookingService.getBookingById(booking.getId());
         bookingService.deleteBooking(storedBooking.get().getId());

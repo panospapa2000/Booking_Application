@@ -4,7 +4,6 @@ import com.onelity.bookme.model.Room;
 import lombok.*;
 import org.modelmapper.ModelMapper;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
