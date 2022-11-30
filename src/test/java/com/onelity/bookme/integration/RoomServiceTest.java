@@ -1,21 +1,38 @@
 package com.onelity.bookme.integration;
 import com.onelity.bookme.model.Room;
+import com.onelity.bookme.repository.RoomRepository;
 import com.onelity.bookme.service.RoomService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.dao.DataIntegrityViolationException;
 import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class RoomServiceTest {
+
+    @MockBean
+    private RoomRepository roomRepository;
     @Autowired
     private RoomService roomService;
     private static final String ROOM_NAME_1 = "ethousa_user";
     private static final String ROOM_NAME_2 = "ethousa1";
     private static final String ROOM_NAME_3 = "ethousa2";
+
+
+    @Test
+    public void postRequestMock(){
+        Room room = new Room();
+        room.setId(Mockito.anyInt());
+        room.setName("Mockito Room");
+        Mockito.when(roomRepository.findById(room.getId())).thenReturn(Optional.of(room));
+        Mockito.when(roomRepository.save(room)).thenReturn(room);
+        Assertions.assertNotEquals(Optional.of(room), null);
+    }
 
     @Test
     public void RoomCRUD_positive_size() throws InterruptedException {
