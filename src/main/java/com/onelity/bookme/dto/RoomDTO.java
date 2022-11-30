@@ -17,7 +17,7 @@ public class RoomDTO {
     ModelMapper modelMapper = new ModelMapper();
 
     public RoomDTO convertToDto(Room room) {
-        return modelMapper.map(this, RoomDTO.class);
+        return modelMapper.map(room, RoomDTO.class);
     }
 
     public Room convertToEntity() {

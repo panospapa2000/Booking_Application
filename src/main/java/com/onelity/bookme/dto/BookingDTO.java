@@ -23,13 +23,15 @@ public class BookingDTO {
     ModelMapper modelMapper = new ModelMapper();
 
     public BookingDTO convertToDto(Booking booking) {
-        return modelMapper.map(this, BookingDTO.class);
-    }
-
-    public static void main(String args[]){
-        String htmlDate = "2022-11-28T16:07";
-        LocalDateTime javaDate = LocalDateTime.parse(htmlDate);
-        System.out.println(javaDate);
+        BookingDTO bookingDTO = new BookingDTO();
+        bookingDTO.setTitle(booking.getTitle());
+        bookingDTO.setDescription(booking.getDescription());
+        bookingDTO.setId(booking.getId());
+        bookingDTO.setParticipants(booking.getParticipants());
+        bookingDTO.setStart_timestamp(Timestamp.valueOf(start_timestamp.toLocalDateTime()));
+        bookingDTO.setEnd_timestamp(Timestamp.valueOf(end_timestamp.toLocalDateTime()));
+        bookingDTO.setRoom(booking.getRoom());
+        return bookingDTO;
     }
 
     public Booking convertToEntity() {

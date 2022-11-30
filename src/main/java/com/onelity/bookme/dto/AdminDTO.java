@@ -14,7 +14,7 @@ public class AdminDTO {
     ModelMapper modelMapper = new ModelMapper();
 
     public AdminDTO convertToDto(Admin admin) {
-        return modelMapper.map(this, AdminDTO.class);
+        return modelMapper.map(admin, AdminDTO.class);
     }
 
     public Admin convertToEntity() {

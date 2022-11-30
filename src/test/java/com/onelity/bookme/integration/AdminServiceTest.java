@@ -23,6 +23,7 @@ public class AdminServiceTest {
     private static final String TEST_PASSWORD1 = "testPassword1";
     private static final String TEST_USERNAME2 = "testUsername2";
     private static final String TEST_PASSWORD2 = "testPassword2";
+
     @Test
     public void postRequestMock(){
         Admin admin = new Admin(Mockito.anyInt(), "mockUsername", "mockPassword");
